@@ -15,7 +15,10 @@ angular
     'ngResource',
     'ngSanitize',
     'ngTouch',
-    'ui.router'
+    'ui.router',
+    'smoothScroll',
+    'sticky',
+    'duScroll'
   ])
 
   .config(function($stateProvider, $urlRouterProvider) {
@@ -32,6 +35,6 @@ angular
 
       .state('examples', {
         url: '/examples',
-        templateUrl: 'views/examples.html' 
+        templateUrl: 'views/examples.html'
       });
   });
