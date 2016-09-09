@@ -10,6 +10,7 @@ $pui-green: #00A79C;
 $screen-sm-min: 768px;
 
 body {
+  background: #F5F6F7;
   height: 100%;
 }
 
@@ -20,7 +21,26 @@ body {
 
 .hero {
   background: #17232a;
-  padding: 105px 0;
+  padding: 35px 0;
+
+  @media(min-width: $screen-sm-min) {
+    padding: 65px 0 135px
+  }
+}
+
+.top-navigation {
+  background: #022D3A;
+  box-shadow: inset 0 -2px 0 0 $brand-3,
+              0 0 5px 5px rgba(0,0,0, .15);
+}
+
+.sub-navigation {
+  background: #011E26;
+}
+
+.pcf-logo {
+  display: inline-block;
+  width: 190px;
 }
 
 .nav-product-groups li {
@@ -76,7 +96,7 @@ body {
   display: block;
 
   &.active {
-    color: $gray-1;
+    color: #fff;
     box-shadow: inset 0 -2px 0 0 $pui-green;
   }
 
@@ -186,5 +206,18 @@ $spin-duration: 500ms;
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+
+.featured-products {
+  @media(min-width: $screen-sm-min) {
+    transform: translateY(-75px);
+  }
+}
+
+.products-area {
+  @media(min-width: $screen-sm-min) {
+    transform: translateY(-35px);
   }
 }

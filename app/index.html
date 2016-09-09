@@ -14,50 +14,45 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <!-- endbuild -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.15.0/lodash.min.js"></script>
   </head>
-  <body ng-app="labsDesignYeoman" ng-controller="MainCtrl" class="bg-neutral-10">
+  <body ng-app="labsDesignYeoman" ng-controller="MainCtrl">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <nav class="bg-dark-1">
-      <div class="bg-shadow-1">
-        <div class="container">
-          <div class="row">
-            <div class="ptm col-xs-8">
-              <a href="#" class="type-neutral-11">
-                <div class="media h4">
-                  <div class="media-left media-middle">
-                    <img src="https://d213dhlpdb53mu.cloudfront.net/assets/pivotal-square-logo-68960a263da7c02f4c672e59d946200c.svg" alt="">
-                  </div>
-                  <div class="media-body media-middle">
-                    <span>Pivotal</span>
-                    <span class="em-high">Network</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="pvl txt-r col-xs-16">
-              <ul class="list-inline lhl man pts">
-                <li class="active">
-                  <a href="#" class="type-neutral-11 type-sm em-alt">Products</a>
-                </li>
-                <li>
-                  <a href="#" class="type-neutral-11 type-sm em-alt">Support</a>
-                </li>
-                <li>
-                  <a href="" class="type-neutral-11 type-sm em-alt btn btn-highlight-alt man em-alt">
-                    Join
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="type-neutral-11 type-sm em-alt">Sign In</a>
-                </li>
-              </ul>
-            </div>
+    <nav class="top-navigation">
+      <div class="container">
+        <div class="row">
+          <div class="ptm col-xs-8">
+            <a class="pcf-logo pvl" href="#">
+              <img class="img-responsive" src="images/pcf-logo.svg" alt="">
+            </a>
+          </div>
+          <div class="pvl txt-r col-xs-16">
+            <p class="pvl mts mbn h4 type-neutral-8 em-high">
+              mrothenberg@pivotal.io
+              <i class="mlm fa fa-chevron-down h6"></i>
+            </p>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <nav class="sub-navigation">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-24">
+            <ul class="list-inline lhl man">
+              <li><a class="pvl em-high" href="#">Learn</a></li>
+              <li><a class="pvl em-high active" href="#">Products</a></li>
+              <li><a class="pvl em-high" href="#">Partners</a></li>
+              <li><a class="pvl em-high" href="#">Documentation</a></li>
+              <li><a class="pvl em-high" href="#">Knowledge Base</a></li>
+              <li><a class="pvl em-high" href="#">Support</a></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -66,22 +61,98 @@
     <header class="hero">
       <div class="container">
         <div class="row">
-          <div class="col-sm-24 col-md-18 col-md-offset-3 txt-c">
-            <h1 class="type-neutral-11">Explore, download, and update software and services</h1>
-            <div class="form-group">
-              <input type="text" ng-model="productSearch" class="form-control input-lg" placeholder="Search for products">
-            </div>
+          <div class="col-sm-10">
+            <h1 class="type-neutral-11 em-low">Explore, launch, and manage solutions in just a few clicks</h1>
           </div>
         </div>
       </div>
     </header>
 
     <main class="main">
-      <div class="loader fade" ng-if="!notCurrentlyLoading">
+      <section class="featured-products">
+        <div class="ptxl">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-8">
+                <div class="card paxl txt-c">
+                  <img src="http://placehold.it/75x75/" alt="">
+                  <h1 class="h2 mbn">OpsManager</h1>
+                  <h2 class="h4 mvn type-neutral-4">Not a YAML Architect? This is for you</h2>
+                </div>
+              </div>
+              <div class="col-sm-8">
+                <div class="card paxl txt-c">
+                  <img src="http://placehold.it/75x75/" alt="">
+                  <h1 class="h2 mbn">Elastic Runtime</h1>
+                  <h2 class="h4 mvn type-neutral-4">This is pretty much PCF, I guess</h2>
+                </div>
+              </div>
+              <div class="col-sm-8">
+                <div class="card paxl txt-c">
+                  <img src="http://placehold.it/75x75/" alt="">
+                  <h1 class="h2 mbn">Metrics</h1>
+                  <h2 class="h4 mvn type-neutral-4">Look at streaming lines for fun</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="products-area">
+        <div class="paxl">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-16">
+                <div class="form-group form-group-search">
+                  <input class="form-control" ng-model="productSearch" placeholder="Search for products">
+                  <i class="fa fa-search"></i>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-24">
+                <div ng-if="(filteredProducts|filter:productSearch).length === 0">
+                  <div class="empty-state txt-c" ng-if="(filteredProducts|filter:productSearch).length ===0">
+                    <img class="img-responsive" src="images/sad-cloud.svg" alt="">
+                    <h1>No results found!</h1>
+                  </div>
+                </div>
+                <div class="tile-layout-sm-2 tile-layout-md-3 tile-gutter tile-layout">
+                  <div class="tile-item" ng-repeat="product in filteredProducts | filter: productSearch">
+                    <div class="card product-card">
+                      <div class="paxl">
+                        <div class="media">
+                          <div class="media-left media-top">
+                            <img src="images/icons/pivotal-icon.png" alt="">
+                          </div>
+                          <div class="media-body media-top">
+                            <h2 class="h3 mvn type-neutral-2">{{ product.name }}</h2>
+                            <p class="h5 mts">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <hr class="mvn">
+                      <div class="pal">
+                        <div class="clearfix">
+                          <h4 class="mvn type-neutral-4 pull-left">
+                            Sponsored by <span class="type-brand-6">{{ product.author }}</span>
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- <div class="loader fade" ng-if="!notCurrentlyLoading">
         <div class="loading"></div>
-      </div>
+      </div> -->
 
-      <div class="search-area" ng-show="!notCurrentlySearching">
+      <!-- <div class="search-area" ng-show="!notCurrentlySearching">
         <div class="paxl">
           <div class="container-fluid">
             <div class="row">
@@ -124,9 +195,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <div class="product-list" ng-show="notCurrentlySearching && notCurrentlyLoading">
+      <!-- <div class="product-list" ng-show="notCurrentlySearching && notCurrentlyLoading">
         <div class="bg-neutral-10">
           <div class="tab-simple-alt">
             <ul class="nav nav-tabs nav-justified nav-product-groups">
@@ -437,7 +508,7 @@
             </div>
           </div>
         </section>
-      </div>
+      </div> -->
     </main>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
