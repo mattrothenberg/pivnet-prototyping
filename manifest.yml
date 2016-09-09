@@ -1,5 +1,5 @@
 applications:
-- name: pivnet-prototype
+- name: pivnet-prototype-v2
   memory: 256M
   path: ./dist/
   buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
