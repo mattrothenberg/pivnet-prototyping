@@ -15,7 +15,8 @@ angular.module('labsDesignYeoman')
         name: '@name',
         icon: '@icon',
         description: '@description',
-        provider: '@provider'
+        provider: '@provider',
+        badge: '@badge',
       },
       link: function postLink($scope, element, attrs) {
       }
