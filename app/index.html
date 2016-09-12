@@ -36,7 +36,7 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-sm-24">
-                <h2> <strong>{{ (filteredProducts|filter:productSearch).length }}</strong> results</h2>
+                <h2> <strong>{{ (filteredProducts|filter:productSearch).length }}</strong> results for <strong>{{ productSearch }}</strong></h2>
                 <hr>
                 <div class="empty-state txt-c" ng-if="(filteredProducts|filter:productSearch).length ===0">
                   <img class="img-responsive" src="images/sad-cloud.svg" alt="">
@@ -47,7 +47,7 @@
                     <product-card
                       name="{{ product.name }}"
                       description="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-                      icon="images/icons/pivotal-icon.png"
+                      icon="{{ product.icon }}"
                       provider="Pivotal">
                     </product-card>
                   </div>
@@ -91,7 +91,7 @@
               <a class="txt-l" ng-click="showProducts('standalone')">
                 <div class="media">
                   <div class="media-left">
-                    <img class="product-group-icon default" src="http://placehold.it/37x37/00A79C" alt="">
+                    <img class="product-group-icon default" src="images/icons/pivotal-standalone-icon.png" alt="">
                   </div>
                   <div class="media-body media-top">
                     <h1 class="product-group-title h3 em-high mtn mbs">Standalone Applications</h1>

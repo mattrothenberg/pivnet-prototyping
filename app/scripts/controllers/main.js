@@ -39,7 +39,7 @@ angular.module('labsDesignYeoman')
       //   $scope.notCurrentlySearching = true;
       //   $scope.notCurrentlyLoading = true;
       // }
-    })
+    }, 1500)
 
     $scope.subnavLinks = {
       pcf: [
@@ -53,11 +53,11 @@ angular.module('labsDesignYeoman')
       core: [
         { name: 'Buildpacks for PCF', author: 'Pivotal' , icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_buildpacks@2x.png'},
         { name: 'PCF Dev', author: 'Pivotal' , icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_pivotal_generic@2x.png'},
-        // { name: 'PCF Elastic Runtime', author: 'Pivotal' , icon: ''},
+        { name: 'PCF Elastic Runtime', author: 'Pivotal' , icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_elasticruntime@2x.png'},
         { name: 'PCF JMX Bridge (Ops Metrics)', author: 'Pivotal' , icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_opsmetrics_cf@2x.png'},
         { name: 'PCF Log Search', author: 'Pivotal' , icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_pcfLogSearch@2x.png'},
-        // { name: 'PCF Metrics', author: 'Pivotal' , icon: ''},
-        // { name: 'PCF Operations Manager', author: 'Pivotal' , icon: ''},
+        { name: 'PCF Metrics', author: 'Pivotal' , icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_pivotal_generic@2x.png'},
+        { name: 'PCF Operations Manager', author: 'Pivotal' , icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_pivotal_generic@2x.png'},
         { name: 'Stemcells for PCF', author: 'Pivotal', icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_pivotal_generic@2x.png' }
       ],
       services: [
