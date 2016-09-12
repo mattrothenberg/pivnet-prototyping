@@ -18,7 +18,8 @@ angular
     'ui.router',
     'smoothScroll',
     'sticky',
-    'duScroll'
+    'duScroll',
+    'focus-if'
   ])
 
   .config(function($stateProvider, $urlRouterProvider) {

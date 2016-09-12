@@ -1,4 +1,4 @@
-'use strict';
+    'use strict';
 
 /**
  * @ngdoc function
@@ -13,6 +13,11 @@ angular.module('labsDesignYeoman')
     $scope.productSearch = '';
     $scope.userIsSearching = false;
     $scope.resultsLoading = false;
+    $scope.searchIsFocused = false;
+
+    $scope.scrollToSearch = function() {
+      $scope.searchIsFocused = true;
+    }
 
     $scope.$watch('productSearch', function(newValue, oldValue) {
       if ( newValue.length > 0 ) {
@@ -31,11 +36,11 @@ angular.module('labsDesignYeoman')
 
     $scope.subnavLinks = {
       pcf: [
-        { id: 'datastores', name: 'Datastores'},
-        { id: 'monitoring', name: 'Logs & Monitoring'},
-        { id: 'mobile', name: 'Mobile Development Tools' },
-        { id: 'messaging', name: 'Caching & Messaging Queues' },
-        { id: 'developer', name: 'Developer Tools'}
+        { id: 'datastores', name: 'Datastores', icon: 'fa-database mrs'},
+        { id: 'monitoring', name: 'Logs & Monitoring', icon: 'fa-file-text'},
+        { id: 'mobile', name: 'Mobile Dev Tools', icon: 'fa-mobile' },
+        { id: 'messaging', name: 'Caching & Messaging Queues', icon: 'fa-comment' },
+        { id: 'developer', name: 'Dev Tools', icon: 'fa-code'}
       ]
     };
 
