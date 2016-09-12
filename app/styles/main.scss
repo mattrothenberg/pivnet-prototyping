@@ -23,8 +23,27 @@ body {
 }
 
 .hero {
-  background: #17232a;
+  background: $dark-2;
   padding: 105px 0;
+  position: relative;
+  z-index: 0;
+
+  &:after {
+    background-image: url('../images/bg-polygon-lines.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
+    content: '';
+    height: 100%;
+    left: 0;
+    opacity: .45;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
 }
 
 .form-control {

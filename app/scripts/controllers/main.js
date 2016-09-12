@@ -21,13 +21,8 @@ angular.module('labsDesignYeoman')
 
     $scope.$watch('productSearch', function(newValue, oldValue) {
       if ( newValue.length > 0 ) {
-        $scope.resultsLoading = true;
-
-        $timeout(function() {
-          $scope.userIsSearching = true;
-          $scope.resultsLoading = false;
-        }, 1000);
-
+        $scope.userIsSearching = true;
+        $scope.resultsLoading = false;
       } else {
         $scope.userIsSearching = false;
         $scope.resultsLoading = false;
