@@ -105,26 +105,26 @@
 
       <div class="sub-navigation-wrap" ng-class="activeTypeFilter">
         <section ng-show="activeTypeFilter === 'pcf' ">
-          <div class="pts pbs">
+          <div class="pvs">
             <div class="container">
               <div class="row">
                 <div class="col-sm-24">
                   <h3 class="type-neutral-3">Core Products</h3>
                   <div class="tile-layout-sm-2 tile-layout-md-4 tile-gutter tile-layout">
                     <div class="tile-item">
-                      <product-card name="Elastic Runtime" icon="https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_elasticruntime@2x.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
+                      <product-card class="featured-product" name="Elastic Runtime" icon="https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_elasticruntime@2x.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
                       </product-card>
                     </div>
                     <div class="tile-item">
-                      <product-card name="Buildpacks" icon="https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_buildpacks@2x.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
+                      <product-card class="featured-product" name="Buildpacks" icon="https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_buildpacks@2x.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
                       </product-card>
                     </div>
                     <div class="tile-item">
-                      <product-card name="Ops Manager" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
+                      <product-card class="featured-product" name="Ops Manager" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
                       </product-card>
                     </div>
                     <div class="tile-item">
-                      <product-card name="Metrics" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
+                      <product-card class="featured-product" name="Metrics" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
                       </product-card>
                     </div>
                   </div>
@@ -135,7 +135,7 @@
           <hr class="mvn">
           <div class="container-fluid">
             <div class="sub-navigation" sticky="" offset="0" sticky-class="is-fixed" disabled-sticky="activeTypeFilter !== 'pcf'">
-              <div class="row">
+              <div class="row hidden-xs">
                 <div class="col-sm-24 txt-c">
                   <ul class="list-inline mbn">
                     <li>
@@ -153,6 +153,26 @@
                   </ul>
                 </div>
               </div>
+              <div class="row visible-xs">
+                <div class="col-sm-24">
+                  <div class="pal txt-r">
+                    <div class="dropdown" uib-dropdown is-open="status.isopen">
+                      <button id="dropdown-button-1" class="btn btn-highlight btn-highlight-alt" type="button" uib-dropdown-toggle>
+                        Filter Products
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu role="menu" aria-labelledby="dropdown-button-1">
+                        <li ng-repeat="link in subnavLinks.pcf track by $index">
+                          <a href="#{{ link.id }}" ng-click="status.isopen = false" du-smooth-scroll class="pvxl phl" du-scrollspy offset="85">
+                            <i class="fa mrs" ng-class="link.icon"></i>
+                            {{link.name}}
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -164,15 +184,15 @@
                   <h3 class="type-neutral-3">Featured Products</h3>
                   <div class="tile-layout-sm-2 tile-layout-md-3 tile-gutter tile-layout">
                     <div class="tile-item">
-                      <product-card name="Pivotal Greenplum" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
+                      <product-card class="featured-product" name="Pivotal Greenplum" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
                       </product-card>
                     </div>
                     <div class="tile-item">
-                      <product-card name="Pivotal HDB" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
+                      <product-card class="featured-product" name="Pivotal HDB" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
                       </product-card>
                     </div>
                     <div class="tile-item">
-                      <product-card name="Pivotal GemFire XD" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
+                      <product-card class="featured-product" name="Pivotal GemFire XD" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
                       </product-card>
                     </div>
                   </div>
@@ -189,15 +209,15 @@
                   <h3 class="type-neutral-3">Featured Products</h3>
                   <div class="tile-layout-sm-2 tile-layout-md-3 tile-gutter tile-layout">
                     <div class="tile-item">
-                      <product-card name="Product #1" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
+                      <product-card class="featured-product" name="Product #1" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
                       </product-card>
                     </div>
                     <div class="tile-item">
-                      <product-card name="Product #2" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
+                      <product-card class="featured-product" name="Product #2" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
                       </product-card>
                     </div>
                     <div class="tile-item">
-                      <product-card name="Product #3" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="{{ product.author }}">
+                      <product-card class="featured-product" name="Product #3" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="{{ product.author }}">
                       </product-card>
                     </div>
                   </div>
@@ -406,6 +426,7 @@
   <script src="bower_components/ngSticky/lib/sticky.js"></script>
   <script src="bower_components/angular-scroll/angular-scroll.js"></script>
   <script src="bower_components/ng-focus-if/focusIf.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 

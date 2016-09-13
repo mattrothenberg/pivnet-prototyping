@@ -31,25 +31,18 @@ angular.module('labsDesignYeoman')
 
     $scope.subnavLinks = {
       pcf: [
-        { id: 'datastores', name: 'Datastores', icon: 'fa-database mrs'},
-        { id: 'monitoring', name: 'Logs & Monitoring', icon: 'fa-file-text'},
-        { id: 'mobile', name: 'Mobile Dev Tools', icon: 'fa-mobile' },
-        { id: 'messaging', name: 'Caching & Messaging Queues', icon: 'fa-comment' },
-        { id: 'developer', name: 'Dev Tools', icon: 'fa-code'}
+        { id: 'datastores', tags: ['data', 'datastores', 'database'], name: 'Datastores', icon: 'fa-database mrs'},
+        { id: 'monitoring', tags: ['log', 'logs', 'monitoring'], name: 'Logs & Monitoring', icon: 'fa-file-text'},
+        { id: 'mobile', tags: ['mobile', 'phone', 'dev', 'tools', 'development'], name: 'Mobile Dev Tools', icon: 'fa-mobile' },
+        { id: 'messaging', tags: ['messaging', 'cache', 'caching', 'cacheing', 'queue'], name: 'Caching & Messaging Queues', icon: 'fa-comment' },
+        { id: 'developer', tags: ['mobile', 'phone', 'dev', 'tools', 'development'], name: 'Dev Tools', icon: 'fa-code'}
       ]
     };
-
-    // Core PCF
-    // - Buildpacks
-    // - Elastic Runtime
-    // - Ops Manager
-    // - Stemcells
 
     $scope.products = {
       datastores: [
         { name: 'MySQL for PCF', author: 'Pivotal' , icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_mysql_cf@2x.png'},
         { name: 'DataStax Enterprise for PCF', author: 'DataStax' , icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_datastaxenterprise_cf@2x.png'},
-        // { name: 'Pivotal HD', author: 'Pivotal', badge: 'Non-Production', icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_hd@2x.png'},
         { name: 'Riak CS for PCF', author: 'Pivotal' , icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_riakcsdev_cf@2x.png'},
         { name: 'Dingo PostgreSQL for PCF', author: 'Dingo', badge: 'BETA', icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_dingopostgresql@2x.png'}
       ],
@@ -112,11 +105,24 @@ angular.module('labsDesignYeoman')
       ]
     };
 
-    $scope.filteredProducts = [];
+    $scope.filteredProducts = [
+      { name: 'Buildpacks for PCF', author: 'Pivotal' , icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_buildpacks@2x.png'},
+      { name: 'PCF Dev', author: 'Pivotal' , icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_pivotal_generic@2x.png'},
+      { name: 'PCF Elastic Runtime', author: 'Pivotal' , icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_elasticruntime@2x.png'},
+      { name: 'PCF Metrics', author: 'Pivotal' , icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_pivotal_generic@2x.png'},
+      { name: 'PCF Ops Manager', author: 'Pivotal' , icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_pivotal_generic@2x.png'},
+      { name: 'Stemcells for PCF', author: 'Pivotal', icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_pivotal_generic@2x.png' }
+    ];
 
-    _.mapValues($scope.products, function(productGroup) {
+    _.mapValues($scope.products, function(productGroup, productGroupTitle) {
       _.map(productGroup, function(product) {
         product.version = faker.system.semver();
+
+        var tags = _.find($scope.subnavLinks.pcf, {id: productGroupTitle});
+
+        if (!! _.size(tags)) {
+          product.tags = tags.tags;
+        }
         $scope.filteredProducts.push(product);
       })
     });

@@ -12,6 +12,7 @@ angular.module('labsDesignYeoman')
       templateUrl: 'views/product-card.html',
       restrict: 'E',
       scope: {
+        class: '@class',
         name: '@name',
         icon: '@icon',
         description: '@description',

@@ -19,7 +19,8 @@ angular
     'smoothScroll',
     'sticky',
     'duScroll',
-    'focus-if'
+    'focus-if',
+    'ui.bootstrap'
   ])
 
   .config(function($stateProvider, $urlRouterProvider) {
