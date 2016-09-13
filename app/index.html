@@ -11,6 +11,7 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/angucomplete-alt/angucomplete-alt.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -22,7 +23,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.15.0/lodash.min.js"></script>
 </head>
 
-<body ng-app="labsDesignYeoman" ng-controller="MainCtrl" class="bg-neutral-10">
+<body ng-app="labsDesignYeoman" ng-controller="MainCtrl" class="bg-neutral-11">
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -103,42 +104,14 @@
         </ul>
       </div>
 
-      <div class="sub-navigation-wrap" ng-class="activeTypeFilter">
-        <section ng-show="activeTypeFilter === 'pcf' ">
-          <div class="pvs">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-24">
-                  <h3 class="type-neutral-3">Core Products</h3>
-                  <div class="tile-layout-sm-2 tile-layout-md-4 tile-gutter tile-layout">
-                    <div class="tile-item">
-                      <product-card class="featured-product" name="Elastic Runtime" icon="https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_elasticruntime@2x.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
-                      </product-card>
-                    </div>
-                    <div class="tile-item">
-                      <product-card class="featured-product" name="Buildpacks" icon="https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_buildpacks@2x.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
-                      </product-card>
-                    </div>
-                    <div class="tile-item">
-                      <product-card class="featured-product" name="Ops Manager" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
-                      </product-card>
-                    </div>
-                    <div class="tile-item">
-                      <product-card class="featured-product" name="Metrics" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
-                      </product-card>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr class="mvn">
+      <div class="sub-navigation-wrap" ng-class="activeTypeFilter" ng-show="activeTypeFilter === 'pcf' ">
+        <section>
           <div class="container-fluid">
             <div class="sub-navigation" sticky="" offset="0" sticky-class="is-fixed" disabled-sticky="activeTypeFilter !== 'pcf'">
               <div class="row hidden-xs">
                 <div class="col-sm-24 txt-c">
                   <ul class="list-inline mbn">
-                    <li>
+                    <li class="mrxxl">
                       <button href="#search" du-smooth-scroll ng-click="scrollToSearch()" class="btn btn-highlight-alt btn-search" >
                         <i class="fa fa-search"></i>
                         Search
@@ -153,7 +126,7 @@
                   </ul>
                 </div>
               </div>
-              <div class="row visible-xs">
+              <!-- <div class="row visible-xs">
                 <div class="col-sm-24">
                   <div class="pal txt-r">
                     <div class="dropdown" uib-dropdown is-open="status.isopen">
@@ -172,64 +145,37 @@
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section ng-show="activeTypeFilter === 'data'">
-          <div class="pts pbs">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-24">
-                  <h3 class="type-neutral-3">Featured Products</h3>
-                  <div class="tile-layout-sm-2 tile-layout-md-3 tile-gutter tile-layout">
-                    <div class="tile-item">
-                      <product-card class="featured-product" name="Pivotal Greenplum" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
-                      </product-card>
-                    </div>
-                    <div class="tile-item">
-                      <product-card class="featured-product" name="Pivotal HDB" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
-                      </product-card>
-                    </div>
-                    <div class="tile-item">
-                      <product-card class="featured-product" name="Pivotal GemFire XD" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
-                      </product-card>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section ng-show="activeTypeFilter === 'standalone' ">
-          <div class="pts pbs">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-24">
-                  <h3 class="type-neutral-3">Featured Products</h3>
-                  <div class="tile-layout-sm-2 tile-layout-md-3 tile-gutter tile-layout">
-                    <div class="tile-item">
-                      <product-card class="featured-product" name="Product #1" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
-                      </product-card>
-                    </div>
-                    <div class="tile-item">
-                      <product-card class="featured-product" name="Product #2" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="Pivotal">
-                      </product-card>
-                    </div>
-                    <div class="tile-item">
-                      <product-card class="featured-product" name="Product #3" icon="images/icons/pivotal-icon.png" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." provider="{{ product.author }}">
-                      </product-card>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </section>
       </div>
-
       <section class="product-tile-section fade" ng-show="activeTypeFilter === 'pcf' && !userIsSearching && !resultsLoading">
         <div class="pvxxl">
+          <article id="core">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-6">
+                  <h3 class="type-neutral-2 mtn mbs">Core Products</h3>
+                  <p class="type-neutral-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, nisi in quasi ipsa dolores maxime consequatur.</p>
+                </div>
+                <div class="col-sm-18">
+                  <div class="tile-layout-sm-2 tile-layout-md-2 tile-layout-lg-2 tile-gutter tile-layout">
+                    <div class="tile-item" ng-repeat="product in products.core">
+                      <product-card
+                        name="{{ product.name }}"
+                        description="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+                        icon="{{product.icon}}"
+                        badge="{{product.badge}}"
+                        provider="{{ product.author }}">
+                      </product-card>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+            </div>
+          </article>
           <article id="datastores">
             <div class="container">
               <div class="row">
@@ -347,7 +293,6 @@
                   </div>
                 </div>
               </div>
-              <hr>
             </div>
           </article>
         </div>
@@ -427,6 +372,7 @@
   <script src="bower_components/angular-scroll/angular-scroll.js"></script>
   <script src="bower_components/ng-focus-if/focusIf.js"></script>
   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/angucomplete-alt/angucomplete-alt.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 

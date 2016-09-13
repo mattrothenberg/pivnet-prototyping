@@ -20,7 +20,8 @@ angular
     'sticky',
     'duScroll',
     'focus-if',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'angucomplete-alt'
   ])
 
   .config(function($stateProvider, $urlRouterProvider) {

@@ -1,0 +1,45 @@
+<div class="angucomplete-holder" ng-class="{'angucomplete-dropdown-visible': showDropdown}">
+  <input ng-model="searchStr"
+    id="productSearchInput"
+    ng-disabled="disableInput"
+    type="text"
+    placeholder="{{placeholder}}"
+    ng-focus="onFocusHandler()"
+    class="{{inputClass}}"
+    ng-focus="resetHideResults()"
+    ng-blur="hideResults($event)"
+    autocapitalize="off"
+    autocorrect="off"
+    autocomplete="off"
+    ng-change="inputChangeHandler(searchStr)"/>
+    <i class="fa fa-search search-icon"></i>
+  <div class="angucomplete-dropdown" ng-show="showDropdown">
+    <div class="angucomplete-searching paxxl" ng-show="searching">
+      <div class="loader">
+        <div class="loading"></div>
+        <h4 class="mtxl mbn">{{ textSearching }}</h4>
+      </div>
+    </div>
+    <div class="angucomplete-searching paxxl" ng-show="!searching && (!results || results.length == 0)">
+      <h4 class="mtxl mbn">{{ textNoResults }}</h4>
+    </div>
+    <div class="angucomplete-row" ng-repeat="result in results" ng-click="selectResult(result)" ng-mouseenter="hoverRow($index)" ng-class="{'angucomplete-selected-row': $index == currentIndex}">
+      <table class="table mvn">
+        <tr>
+          <td class="txt-m txt-l" width="5%">
+            <div ng-if="imageField" class="angucomplete-image-holder">
+              <img ng-if="result.image && result.image != ''" ng-src="{{result.image}}" class="angucomplete-image"/>
+              <div ng-if="!result.image && result.image != ''" class="angucomplete-image-default"></div>
+            </div>
+          </td>
+          <td class="txt-m txt-l" width="70%">
+            <h1 class="h4 em-normal type-neutral-3 angucomplete-title mvn pull-left" ng-if="matchClass" ng-bind-html="result.title"></h1>
+          </td>
+          <td class="txt-m txt-r" width="25%">
+            <p class="mvn type-neutral-5" ng-bind-html="result.description"></p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
