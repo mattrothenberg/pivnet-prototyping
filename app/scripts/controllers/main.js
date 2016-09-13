@@ -47,12 +47,12 @@ angular.module('labsDesignYeoman')
 
     $scope.products = {
       core: [
-        { name: 'Buildpacks for PCF', author: 'Pivotal' , icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_buildpacks@2x.png'},
-        { name: 'PCF Dev', author: 'Pivotal' , icon: 'images/icons/default.svg'},
-        { name: 'PCF Elastic Runtime', author: 'Pivotal' , icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_elasticruntime@2x.png'},
-        { name: 'PCF Metrics', author: 'Pivotal' , icon: 'images/icons/default.svg'},
+        { name: 'PCF Elastic Runtime', author: 'Pivotal' , icon: 'images/icons/default.svg'},
+        { name: 'Stemcells for PCF', author: 'Pivotal', icon: 'images/icons/default.svg' },
+        { name: 'Buildpacks for PCF', author: 'Pivotal' , icon: 'images/icons/default.svg'},
         { name: 'PCF Ops Manager', author: 'Pivotal' , icon: 'images/icons/default.svg'},
-        { name: 'Stemcells for PCF', author: 'Pivotal', icon: 'images/icons/default.svg' }
+        { name: 'PCF Dev', author: 'Pivotal' , icon: 'images/icons/default.svg'},
+        { name: 'PCF Metrics', author: 'Pivotal' , icon: 'images/icons/default.svg'}
       ],
       datastores: [
         { name: 'MySQL for PCF', author: 'Pivotal' , icon: 'images/icons/mysql.svg'},

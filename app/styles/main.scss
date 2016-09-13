@@ -121,6 +121,7 @@ body {
     width: 100% !important;
 
     .btn-search {
+      display: inline-block !important;
       opacity: 1;
       transform: translateY(0);
       visibility: visible;
@@ -129,6 +130,7 @@ body {
 }
 
 .btn-search {
+  display: none !important;
   opacity: 0;
   transform: translateY(100px);
   transition: all .2s ease-out;
@@ -166,7 +168,7 @@ body {
               border .2s ease-out;
 
   &:hover {
-    border-color: $teal-8;
+    border-color: #00AD9D;
     box-shadow: 0 2px 5px shade($dark-9, 5%);
   }
 }
@@ -277,7 +279,7 @@ $spin-duration: 500ms;
 }
 
 .angucomplete-selected-row {
-  background-color: $gray-9;
+  background-color: $neutral-9;
   color: inherit;
 }
 
@@ -298,4 +300,8 @@ $spin-duration: 500ms;
       color: $pui-green;
     }
   }
+}
+
+.angucomplete-title .highlight {
+  color: $neutral-1;
 }
