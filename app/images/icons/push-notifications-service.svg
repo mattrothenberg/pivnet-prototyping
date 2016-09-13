@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 256 256" style="enable-background:new 0 0 256 256;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#9DD8D5;}
+	.st2{fill:none;stroke:#01AD9D;stroke-width:8;stroke-miterlimit:10;}
+	.st3{fill:#01AD9D;stroke:#FFFFFF;stroke-width:8;stroke-miterlimit:10;}
+	.st4{fill:none;}
+	.st5{font-family:'ProximaNova-Bold';}
+	.st6{font-size:50px;}
+</style>
+<g>
+	<g>
+		<path class="st0" d="M128,252C59.6,252,4,196.4,4,128C4,59.6,59.6,4,128,4s124,55.6,124,124C252,196.4,196.4,252,128,252z"/>
+		<path class="st1" d="M128,8c32.1,0,62.2,12.5,84.9,35.1C235.5,65.8,248,95.9,248,128s-12.5,62.2-35.1,84.9
+			C190.2,235.5,160.1,248,128,248s-62.2-12.5-84.9-35.1S8,160.1,8,128s12.5-62.2,35.1-84.9S95.9,8,128,8 M128,0C57.3,0,0,57.3,0,128
+			s57.3,128,128,128s128-57.3,128-128S198.7,0,128,0L128,0z"/>
+	</g>
+	<path class="st2" d="M170.8,154.7c0,8.8-7.2,16-16,16h-54c-8.8,0-16-7.2-16-16v-54c0-8.8,7.2-16,16-16h54c8.8,0,16,7.2,16,16V154.7
+		z"/>
+	<circle class="st3" cx="169.6" cy="95.3" r="37"/>
+	<rect x="148.8" y="77.2" class="st4" width="42.5" height="47"/>
+	<text transform="matrix(1 0 0 1 155.0927 110.5161)" class="st0 st5 st6">2</text>
+</g>
+</svg>
