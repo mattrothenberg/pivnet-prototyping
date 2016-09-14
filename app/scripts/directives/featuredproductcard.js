@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc directive
- * @name labsDesignYeoman.directive:ProductCard
+ * @name labsDesignYeoman.directive:featuredProductCard
  * @description
- * # ProductCard
+ * # featuredProductCard
  */
 angular.module('labsDesignYeoman')
-  .directive('productCard', function () {
+  .directive('featuredProductCard', function () {
     return {
-      templateUrl: 'views/product-card.html',
+      templateUrl: 'views/featured-product-card.html',
       restrict: 'E',
       scope: {
         class: '@class',

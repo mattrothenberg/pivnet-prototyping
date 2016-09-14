@@ -10,6 +10,7 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
   @return mix(black, $color, $percentage);
 }
 
+$pui-mint: #00AD9D;
 $pui-green: #00A79C;
 $screen-sm-min: 768px;
 
@@ -168,7 +169,7 @@ body {
               border .2s ease-out;
 
   &:hover {
-    border-color: #00AD9D;
+    border-color: $pui-mint;
     box-shadow: 0 2px 5px shade($dark-9, 5%);
   }
 }
@@ -186,6 +187,10 @@ body {
     border-radius: 50%;
     width: 45px;
   }
+}
+
+.featured-product-card {
+  border-color: $pui-mint;
 }
 
 .badge {
@@ -302,6 +307,24 @@ $spin-duration: 500ms;
   }
 }
 
+.hr-mint {
+  border-color: $pui-mint;
+  border-width: 2px;
+  display: inline-block;
+  margin-left: 0;
+  margin-right: 0;
+  width: 25px;
+}
+
 .angucomplete-title .highlight {
   color: $neutral-1;
+}
+
+.pcf-core-products {
+
+}
+
+.pcf-services {
+  background: $neutral-10;
+  box-shadow: inset 0 1px 0 0 $neutral-9;
 }

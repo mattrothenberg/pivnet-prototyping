@@ -151,144 +151,32 @@
         </section>
       </div>
       <section class="product-tile-section fade" ng-show="activeTypeFilter === 'pcf' && !userIsSearching && !resultsLoading">
-        <div class="pvxxl">
+        <div class="pcf-core-products paxxl">
           <article id="core">
             <div class="container">
               <div class="row">
+                <div class="col-sm-18 col-sm-offset-3 txt-c">
+                  <h2 class="mtn mbn">A modern IT platform that accelerates software development, leveraging integrated app development tools.</h2>
+                  <h3 class="mts mbs type-neutral-4">Developers get role-based self-service access to systems of record, big data analytics, mobile notifications, continuous integration and more.</h3>
+                  <hr class="hr-mint mbxl">
+                </div>
+              </div>
+              <div class="row">
                 <div class="col-sm-6">
-                  <h3 class="type-neutral-2 mtn mbs">Core Products</h3>
+                  <h3 class="type-neutral-2 mtn mbs">Core Offerings</h3>
                   <p class="type-neutral-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, nisi in quasi ipsa dolores maxime consequatur.</p>
+                  <button class="btn btn-highlight btn-highlight-alt mvl">Learn More</button>
                 </div>
                 <div class="col-sm-18">
-                  <div class="tile-layout-sm-2 tile-layout-md-2 tile-layout-lg-2 tile-gutter tile-layout">
+                  <div class="tile-layout-sm-2 tile-layout-md-2 tile-layout-lg-3 tile-gutter tile-layout">
                     <div class="tile-item" ng-repeat="product in products.core">
-                      <product-card
+                      <featured-product-card
                         name="{{ product.name }}"
-                        description="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+                        description="{{ product.description }}"
                         icon="{{product.icon}}"
                         badge="{{product.badge}}"
                         provider="{{ product.author }}">
-                      </product-card>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <hr>
-            </div>
-          </article>
-          <article id="datastores">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-6">
-                  <h3 class="type-neutral-2 mtn mbs">Datastores</h3>
-                  <p class="type-neutral-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, nisi in quasi ipsa dolores maxime consequatur.</p>
-                </div>
-                <div class="col-sm-18">
-                  <div class="tile-layout-sm-2 tile-layout-md-2 tile-layout-lg-2 tile-gutter tile-layout">
-                    <div class="tile-item" ng-repeat="product in products.datastores">
-                      <product-card
-                        name="{{ product.name }}"
-                        description="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-                        icon="{{product.icon}}"
-                        badge="{{product.badge}}"
-                        provider="{{ product.author }}">
-                      </product-card>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <hr>
-            </div>
-          </article>
-          <article id="monitoring">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-6">
-                  <h3 class="type-neutral-2 mtn mbs">Logs &amp; Monitoring</h3>
-                  <p class="type-neutral-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, nisi in quasi ipsa dolores maxime consequatur.</p>
-                </div>
-                <div class="col-sm-18">
-                  <div class="tile-layout-sm-2 tile-layout-md-2 tile-layout-lg-2 tile-gutter tile-layout">
-                    <div class="tile-item" ng-repeat="product in products.monitoring">
-                      <product-card
-                        name="{{ product.name }}"
-                        description="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-                        icon="{{product.icon}}"
-                        badge="{{product.badge}}"
-                        provider="{{ product.author }}">
-                      </product-card>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <hr>
-            </div>
-          </article>
-          <article id="mobile">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-6">
-                  <h3 class="type-neutral-2 mtn mbs">Mobile Development Tools</h3>
-                  <p class="type-neutral-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, nisi in quasi ipsa dolores maxime consequatur.</p>
-                </div>
-                <div class="col-sm-18">
-                  <div class="tile-layout-sm-2 tile-layout-md-2 tile-layout-lg-2 tile-gutter tile-layout">
-                    <div class="tile-item" ng-repeat="product in products.mobile">
-                      <product-card
-                        name="{{ product.name }}"
-                        description="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-                        icon="{{product.icon}}"
-                        badge="{{product.badge}}"
-                        provider="{{ product.author }}">
-                      </product-card>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <hr>
-            </div>
-          </article>
-          <article id="messaging">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-6">
-                  <h3 class="type-neutral-2 mtn mbs">Caching &amp; Messaging Queues</h3>
-                  <p class="type-neutral-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, nisi in quasi ipsa dolores maxime consequatur.</p>
-                </div>
-                <div class="col-sm-18">
-                  <div class="tile-layout-sm-2 tile-layout-md-2 tile-layout-lg-2 tile-gutter tile-layout">
-                    <div class="tile-item" ng-repeat="product in products.messaging">
-                      <product-card
-                        name="{{ product.name }}"
-                        description="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-                        icon="{{product.icon}}"
-                        badge="{{product.badge}}"
-                        provider="{{ product.author }}">
-                      </product-card>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <hr>
-            </div>
-          </article>
-          <article id="developer">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-6">
-                  <h3 class="type-neutral-2 mtn mbs">Developer Tools</h3>
-                  <p class="type-neutral-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, nisi in quasi ipsa dolores maxime consequatur.</p>
-                </div>
-                <div class="col-sm-18">
-                  <div class="tile-layout-sm-2 tile-layout-md-2 tile-layout-lg-2 tile-gutter tile-layout">
-                    <div class="tile-item" ng-repeat="product in products.developer">
-                      <product-card
-                        name="{{ product.name }}"
-                        description="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-                        icon="{{product.icon}}"
-                        badge="{{product.badge}}"
-                        provider="{{ product.author }}">
-                      </product-card>
+                      </featured-product-card>
                     </div>
                   </div>
                 </div>
@@ -296,6 +184,136 @@
             </div>
           </article>
         </div>
+          <div class="pcf-services paxxl">
+            <article id="datastores">
+              <div class="container">
+                <div class="row">
+                  <div class="row">
+                    <div class="col-sm-18 col-sm-offset-3 txt-c">
+                      <h2 class="mtn mbn">Leverage Pivotal Cloud Foundry Services</h2>
+                      <h3 class="mts mbs type-neutral-4">Developers get role-based self-service access to systems of record, big data analytics, mobile notifications, continuous integration and more.</h3>
+                      <hr class="hr-mint mbxxl">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <h3 class="type-neutral-2 mtn mbs">Datastores</h3>
+                    <p class="type-neutral-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, nisi in quasi ipsa dolores maxime consequatur.</p>
+                  </div>
+                  <div class="col-sm-18">
+                    <div class="tile-layout-sm-2 tile-layout-md-2 tile-layout-lg-2 tile-gutter tile-layout">
+                      <div class="tile-item" ng-repeat="product in products.datastores">
+                        <product-card
+                          name="{{ product.name }}"
+                          description="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+                          icon="{{product.icon}}"
+                          badge="{{product.badge}}"
+                          provider="{{ product.author }}">
+                        </product-card>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+              </div>
+            </article>
+            <article id="monitoring">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <h3 class="type-neutral-2 mtn mbs">Logs &amp; Monitoring</h3>
+                    <p class="type-neutral-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, nisi in quasi ipsa dolores maxime consequatur.</p>
+                  </div>
+                  <div class="col-sm-18">
+                    <div class="tile-layout-sm-2 tile-layout-md-2 tile-layout-lg-2 tile-gutter tile-layout">
+                      <div class="tile-item" ng-repeat="product in products.monitoring">
+                        <product-card
+                          name="{{ product.name }}"
+                          description="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+                          icon="{{product.icon}}"
+                          badge="{{product.badge}}"
+                          provider="{{ product.author }}">
+                        </product-card>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+              </div>
+            </article>
+            <article id="mobile">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <h3 class="type-neutral-2 mtn mbs">Mobile Development Tools</h3>
+                    <p class="type-neutral-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, nisi in quasi ipsa dolores maxime consequatur.</p>
+                  </div>
+                  <div class="col-sm-18">
+                    <div class="tile-layout-sm-2 tile-layout-md-2 tile-layout-lg-2 tile-gutter tile-layout">
+                      <div class="tile-item" ng-repeat="product in products.mobile">
+                        <product-card
+                          name="{{ product.name }}"
+                          description="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+                          icon="{{product.icon}}"
+                          badge="{{product.badge}}"
+                          provider="{{ product.author }}">
+                        </product-card>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+              </div>
+            </article>
+            <article id="messaging">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <h3 class="type-neutral-2 mtn mbs">Caching &amp; Messaging Queues</h3>
+                    <p class="type-neutral-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, nisi in quasi ipsa dolores maxime consequatur.</p>
+                  </div>
+                  <div class="col-sm-18">
+                    <div class="tile-layout-sm-2 tile-layout-md-2 tile-layout-lg-2 tile-gutter tile-layout">
+                      <div class="tile-item" ng-repeat="product in products.messaging">
+                        <product-card
+                          name="{{ product.name }}"
+                          description="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+                          icon="{{product.icon}}"
+                          badge="{{product.badge}}"
+                          provider="{{ product.author }}">
+                        </product-card>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+              </div>
+            </article>
+            <article id="developer">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <h3 class="type-neutral-2 mtn mbs">Developer Tools</h3>
+                    <p class="type-neutral-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, nisi in quasi ipsa dolores maxime consequatur.</p>
+                  </div>
+                  <div class="col-sm-18">
+                    <div class="tile-layout-sm-2 tile-layout-md-2 tile-layout-lg-2 tile-gutter tile-layout">
+                      <div class="tile-item" ng-repeat="product in products.developer">
+                        <product-card
+                          name="{{ product.name }}"
+                          description="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+                          icon="{{product.icon}}"
+                          badge="{{product.badge}}"
+                          provider="{{ product.author }}">
+                        </product-card>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
     </div>
     </section>
     <section class="product-tile-section fade" ng-show="activeTypeFilter === 'data' && !userIsSearching && !resultsLoading">
@@ -382,6 +400,7 @@
   <script src="scripts/controllers/user.js"></script>
   <script src="scripts/directives/productcard.js"></script>
   <script src="scripts/directives/hero.js"></script>
+  <script src="scripts/directives/featuredproductcard.js"></script>
   <!-- endbuild -->
 </body>
 

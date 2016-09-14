@@ -16,23 +16,12 @@ angular.module('labsDesignYeoman')
     $scope.searchIsFocused = false;
 
     $scope.scrollToSearch = function() {
-      // $scope.$broadcast('angucomplete-alt:changeInput', 'productSearch', ' ');
       $timeout(function() {
         document.getElementById('productSearchInput').focus();
-      })
+      });
 
       $scope.searchIsFocused = true;
-    }
-
-    // $scope.$watch('productSearch', function(newValue, oldValue) {
-    //   if ( newValue.length > 0 ) {
-    //     $scope.userIsSearching = true;
-    //     $scope.resultsLoading = false;
-    //   } else {
-    //     $scope.userIsSearching = false;
-    //     $scope.resultsLoading = false;
-    //   }
-    // }, 1500)
+    };
 
     $scope.subnavLinks = {
       pcf: [
@@ -47,12 +36,9 @@ angular.module('labsDesignYeoman')
 
     $scope.products = {
       core: [
-        { name: 'PCF Elastic Runtime', author: 'Pivotal' , icon: 'images/icons/default.svg'},
-        { name: 'Stemcells for PCF', author: 'Pivotal', icon: 'images/icons/default.svg' },
-        { name: 'Buildpacks for PCF', author: 'Pivotal' , icon: 'images/icons/default.svg'},
-        { name: 'PCF Ops Manager', author: 'Pivotal' , icon: 'images/icons/default.svg'},
-        { name: 'PCF Dev', author: 'Pivotal' , icon: 'images/icons/default.svg'},
-        { name: 'PCF Metrics', author: 'Pivotal' , icon: 'images/icons/default.svg'}
+        { name: 'PCF Elastic Runtime', author: 'Pivotal', icon: 'images/icons/default.svg', description: 'A scalable runtime environment, extensible to most modern frameworks or languages.'},
+        { name: 'PCF Ops Manager', author: 'Pivotal' , icon: 'images/icons/default.svg', description: 'Manage the deployment and upgrade of PCF components and additional services.'},
+        { name: 'Stemcells for PCF', author: 'Pivotal', icon: 'images/icons/default.svg', description: 'Versioned Operating System images wrapped with IaaS specific packaging.'},
       ],
       datastores: [
         { name: 'MySQL for PCF', author: 'Pivotal' , icon: 'images/icons/mysql.svg'},
@@ -61,6 +47,7 @@ angular.module('labsDesignYeoman')
         { name: 'Dingo PostgreSQL for PCF', author: 'Dingo', badge: 'BETA', icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_dingopostgresql@2x.png'}
       ],
       monitoring: [
+        { name: 'PCF Metrics', author: 'Pivotal' , icon: 'images/icons/default.svg'},
         { name: 'Spring Insight for PCF', author: 'Pivotal' , icon: 'images/icons/spring-insight.svg'},
         { name: 'PCF Log Search', author: 'Pivotal' , icon: 'https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_pcfLogSearch@2x.png'},
         { name: 'ISS Knowtify Search Analytics for PCF', author: 'ISS' , icon: 'images/icons/knowtify.svg'}
@@ -79,6 +66,7 @@ angular.module('labsDesignYeoman')
         { name: 'Kafka for PCF', author: 'Pivotal' , icon: 'images/icons/default.svg'}
       ],
       developer: [
+        { name: 'Buildpacks for PCF', author: 'Pivotal' , icon: 'images/icons/default.svg', description: 'Buildpacks provide framework and runtime support for your applications.'},
         { name: 'PCF Dev', author: 'Pivotal' , icon: 'images/icons/default.svg'},
         { name: 'Data Sync', author: 'Pivotal' , icon: 'images/icons/data-sync.svg'},
         { name: 'IPSec Add-on for PCF', author: 'Pivotal' , icon: 'images/icons/default.svg'},
@@ -124,7 +112,7 @@ angular.module('labsDesignYeoman')
 
     String.prototype.capitalizeFirstLetter = function() {
       return this.charAt(0).toUpperCase() + this.slice(1);
-    }
+    };
 
     _.mapValues($scope.products, function(productGroup, productGroupTitle) {
       _.map(productGroup, function(product) {
@@ -143,10 +131,10 @@ angular.module('labsDesignYeoman')
           product.tags = tags.tags;
         }
         $scope.filteredProducts.push(product);
-      })
+      });
     });
 
     $scope.showProducts = function(type) {
       $scope.activeTypeFilter = type;
-    }
+    };
   });
