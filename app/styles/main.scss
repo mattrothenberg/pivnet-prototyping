@@ -16,6 +16,15 @@ $screen-sm-min: 768px;
 
 body {
   height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container-xl {
+  @media(min-width: 1200px) {
+    width: 95%;
+    max-width: 1440px;
+  }
 }
 
 .main {
@@ -25,27 +34,11 @@ body {
 }
 
 .hero {
-  background: $dark-2;
+  background: $dark-2 url('../images/bg-polygon-lines.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 105px 0;
-  position: relative;
   z-index: 10;
-
-  &:after {
-    background-image: url('../images/bg-polygon-lines.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    bottom: 0;
-    content: '';
-    height: 100%;
-    left: 0;
-    opacity: .45;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    z-index: -1;
-  }
 }
 
 .form-control {
@@ -58,6 +51,7 @@ body {
 
 .nav-product-groups li {
   background: $neutral-10;
+  border-top: 0;
   border-bottom: 1px solid #eee;
   margin-bottom: 0;
   transition: box-shadow .2s ease-out,
@@ -187,6 +181,11 @@ body {
     border-radius: 50%;
     width: 45px;
   }
+}
+
+.img-badge {
+  border-radius: 50%;
+  width: 60px;
 }
 
 .featured-product-card {
@@ -327,4 +326,56 @@ $spin-duration: 500ms;
 .pcf-services {
   background: $neutral-10;
   box-shadow: inset 0 1px 0 0 $neutral-9;
+}
+
+.product-feature-list {
+  list-style-type: none;
+
+  li:not(.checked) {
+    padding-left: 26px;
+  }
+}
+
+.product-detail-breadcrumb {
+  border-bottom: 1px solid $dark-3;
+}
+
+.product-detail-breadcrumb-inner {
+  display: flex;
+
+  .breadcrumb-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .breadcrumb-right {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+.product-detail-title {
+  h1 {
+    line-height: 1;
+  }
+
+  p {
+    line-height: 1;
+  }
+}
+
+.product-detail-dropdown {
+  display: block;
+
+  .dropdown-toggle {
+    text-align: left;
+  }
+
+  .dropdown-menu {
+    max-height: 200px;
+    overflow-y: scroll;
+    width: 100%;
+  }
 }

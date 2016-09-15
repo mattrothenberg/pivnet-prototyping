@@ -1,0 +1,126 @@
+<header class="bg-dark-2">
+  <div class="product-detail-breadcrumb pvl">
+    <div class="container container-xl">
+      <div class="product-detail-breadcrumb-inner">
+        <div class="breadcrumb-left">
+          <a ui-sref="index" class="h4 text-uppercase type-dark-6">
+            <i class="fa fa-chevron-left h5 mrs"></i>
+            Back
+          </a>
+        </div>
+        <div class="breadcrumb-right">
+          <ul class="list-inline lhxl mtm mbn">
+            <li><a class="h4 em-high type-neutral-11">Get Email Updates</a></li>
+            <li><a class="h4 em-high type-neutral-11">Documentation</a></li>
+            <li><a class="h4 em-high type-neutral-11">Compatability Matrix</a></li>
+            <li><a class="h4 em-high type-neutral-11">PDF Asset</a></li>
+            <li><a class="h4 em-high btn btn-highlight mts type-neutral-11">Download</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="product-detail-header pvxxl">
+    <div class="container container-xl">
+      <div class="row">
+        <div class="col-sm-24">
+          <div class="media mvm product-detail-title">
+            <div class="media-left media-top">
+              <img class="img-badge" src="{{ product.icon }}" alt="">
+            </div>
+            <div class="media-body pll media-top type-neutral-11">
+              <h1 class="mtn mbm pvn">{{ product.name }}</h1>
+              <p class="h4 mvn pvn">
+                Provided by
+                <strong>{{ product.author }}</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <h2 class="h3 mbs em-high type-brand-9">Overview</h2>
+          <p class="h4 mts type-neutral-11">Pivotal Cloud Foundry® Elastic Runtime is a complete, scalable runtime environment, extensible to most modern frameworks or languages running on Linux. Deployed applications enjoy built-in services and can automatically bind to new data services through a service broker or to an existing user-provided service.</p>
+          <h2 class="h3 mbs em-high type-brand-9">Features</h2>
+          <ul class="lvn h4 type-neutral-11 pll">
+            <li>Dedicated, comprehensive solution built to scale</li>
+            <li>Location based notifications</li>
+            <li>Admin UI for simple, comprehensive management and sending notifications</li>
+            <li>Comprehensive logging</li>
+            <li>Receipt confirmation</li>
+            <li>SDKs for iOS, Android,</li>
+            <li>Topic subscription</li>
+          </ul>
+        </div>
+        <div class="col-sm-12">
+          <h2 class="h3 mbs em-high type-brand-9">Enterprise Criteria</h2>
+          <div class="row">
+            <div class="col-sm-12 col-md-10">
+              <ul class="lvl product-feature-list h4 pln">
+                <li class="type-neutral-11 checked">
+                  <i class="fa fa-check type-brand-9 mrs"></i>
+                  Highly Available
+                </li>
+                <li class="type-neutral-11 checked">
+                  <i class="fa fa-check type-brand-9 mrs"></i>
+                  Availability Zone Support
+                </li>
+                <li class="type-neutral-11 checked">
+                  <i class="fa fa-check type-brand-9 mrs"></i>
+                  Automated Version Upgrades
+                </li>
+                <li class="type-neutral-11 checked">
+                  <i class="fa fa-check type-brand-9 mrs"></i>
+                  Rolling Deployments
+                </li>
+                <li class="type-dark-5">Customizable Plans</li>
+                <li class="type-dark-5">Customizable Instances</li>
+                <li class="type-dark-5">Plan Migrations</li>
+              </ul>
+            </div>
+            <div class="col-sm-12 col-md-14">
+              <ul class="lvl product-feature-list h4 pln">
+                <li class="type-dark-5">Dedicated &amp; Shared Instances</li>
+                <li class="type-neutral-11 checked">
+                  <i class="fa fa-check type-brand-9 mrs"></i>
+                  Operational Monitoring &amp; Logging
+                </li>
+                <li class="type-neutral-11 checked">
+                  <i class="fa fa-check type-brand-9 mrs"></i>
+                  Deployment Smoke Tests
+                </li>
+                <li class="type-dark-5">Long Lived Canaries</li>
+                <li class="type-neutral-11 checked">
+                  <i class="fa fa-check type-brand-9 mrs"></i>
+                  Encrypted Communication in transmit
+                </li>
+                <li class="type-dark-5">Quota / Metering</li>
+                <li class="type-dark-5">Backup &amp; Restore</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="dropdown product-detail-dropdown mtxl" uib-dropdown is-open="status.isopen">
+            <button id="dropdown-button-1"
+              class="dropdown-toggle btn btn-default-alt btn-block btn-lg type-neutral-2"
+               type="button" aria-haspopup="true" aria-expanded="false" uib-dropdown-toggle>
+              Release:
+              <span class="mls em-default">{{ selectedRelease }}</span>
+              <span class="caret pull-right mtl"></span>
+            </button>
+            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="dropdown-button-1">
+              <li ng-repeat="release in releases">
+                <a class="pvm h4" ng-click="selectRelease(release)">{{ release }}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<hr class="mvn">

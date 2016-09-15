@@ -8,6 +8,10 @@
  *
  * Main module of the application.
  */
+ String.prototype.capitalizeFirstLetter = function() {
+   return this.charAt(0).toUpperCase() + this.slice(1);
+ };
+
 angular
   .module('labsDesignYeoman', [
     'ngAnimate',
@@ -27,17 +31,27 @@ angular
   .config(function($stateProvider, $urlRouterProvider) {
     //
     // For any unmatched url, redirect to /state1
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/products');
     //
     // Now set up the states
     $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'views/main.html'
+      .state('index', {
+        url: '/products',
+        views: {
+          'main': {
+            templateUrl: 'views/product-index.html',
+            controller: 'IndexCtrl'
+          }
+        }
       })
 
-      .state('examples', {
-        url: '/examples',
-        templateUrl: 'views/examples.html'
+      .state('detail', {
+        url: '/products/:id',
+        views: {
+          'main': {
+            templateUrl: 'views/product-detail.html',
+            controller: 'DetailCtrl'
+          }
+        }
       });
   });

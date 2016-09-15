@@ -1,29 +1,122 @@
-<header class="hero" id="search">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-24 col-md-18 col-md-offset-3 txt-c">
-        <h1 class="type-neutral-11">Explore, download, and update software and services</h1>
-        <div class="form-group">
-          <!-- <input type="text" ng-model="$parent.productSearch" focus-if="$parent.searchIsFocused" class="form-control input-lg" placeholder="Search for products"> -->
-          <div angucomplete-alt
-            id="productSearch"
-            placeholder="Search for products"
-            pause="1500"
-            selected-object="$parent.productSearch"
-            local-data="$parent.filteredProducts"
-            search-fields="name,group"
-            image-field="icon"
-            title-field="name"
-            description-field="group"
-            minlength="1"
-            autofocus="searchIsFocused"
-            input-class="form-control input-lg search-input"
-            template-url="views/product-search-dropdown.html"
-            match-class="highlight">
+<section class="top-section">
+  <header class="hero" id="search">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-24 col-md-18 col-md-offset-3 txt-c">
+          <h1 class="type-neutral-11">Explore, download, and update software and services</h1>
+          <div class="form-group">
+            <!-- <input type="text" ng-model="$parent.productSearch" focus-if="$parent.searchIsFocused" class="form-control input-lg" placeholder="Search for products"> -->
+            <div angucomplete-alt
+              id="productSearch"
+              placeholder="Search for products"
+              pause="1500"
+              selected-object="$parent.productSearch"
+              local-data="$parent.filteredProducts"
+              search-fields="name,group"
+              image-field="icon"
+              title-field="name"
+              description-field="group"
+              minlength="1"
+              autofocus="searchIsFocused"
+              input-class="form-control input-lg search-input"
+              template-url="views/product-search-dropdown.html"
+              match-class="highlight">
+            </div>
+            <!-- <i class="fa fa-search"></i> -->
           </div>
-          <!-- <i class="fa fa-search"></i> -->
         </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
+  <div class="product-list" ng-show="! userIsSearching">
+    <div class="tab-simple-alt">
+      <ul class="nav nav-tabs nav-justified nav-product-groups">
+        <li class="valign-middle pvl" ng-class="activeTypeFilter === 'pcf' ? 'active': ''">
+          <a class="txt-l phxxl" ng-click="showProducts('pcf')">
+            <div class="media">
+              <div class="media-left">
+                <img class="product-group-icon" src="images/icons/pcf-icon.png" alt="">
+              </div>
+              <div class="media-body media-top">
+                <h1 class="product-group-title h3 em-high mtn mbs">Pivotal Cloud Foundry (PCF)</h1>
+                <p class="em-default">A modern IT platform that accelerates software development, leveraging integrated app development tools.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="valign-middle pvl" ng-class="activeTypeFilter === 'data' ? 'active': ''">
+          <a class="txt-l phxxl" ng-click="showProducts('data')">
+            <div class="media">
+              <div class="media-left">
+                <img class="product-group-icon" src="images/icons/data-icon.png" alt="">
+              </div>
+              <div class="media-body media-top">
+                <h1 class="product-group-title h3 em-high mtn mbs">Data Applications</h1>
+                <p class="em-default">To turn structured and unstructured data into actionable intelligence, Pivotal offers effective, smart ways to harness Big Data.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="valign-middle pvl" ng-class="activeTypeFilter === 'standalone' ? 'active': ''">
+          <a class="txt-l phxxl" ng-click="showProducts('standalone')">
+            <div class="media">
+              <div class="media-left">
+                <img class="product-group-icon default" src="images/icons/pivotal-standalone-icon.png" alt="">
+              </div>
+              <div class="media-body media-top">
+                <h1 class="product-group-title h3 em-high mtn mbs">Standalone Applications</h1>
+                <p class="em-default">Scale your app by decomposing it. Provide companies with a secure, supported, and extended server technology. Deliver higher web-tier performance, scalability, and security.</p>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sub-navigation-wrap" ng-class="activeTypeFilter" ng-show="activeTypeFilter === 'pcf' ">
+      <section>
+        <div class="container-fluid">
+          <div class="sub-navigation" sticky="" offset="0" sticky-class="is-fixed" disabled-sticky="activeTypeFilter !== 'pcf'">
+            <div class="row hidden-xs">
+              <div class="col-sm-24 txt-c">
+                <ul class="list-inline mbn">
+                  <li class="btn-search mrxxl">
+                    <button href="#search" du-smooth-scroll ng-click="scrollToSearch()" class="btn btn-highlight-alt">
+                      <i class="fa fa-search"></i>
+                      Search
+                    </button>
+                  </li>
+                  <li ng-repeat="link in subnavLinks.pcf track by $index">
+                    <a href="#{{ link.id }}" du-smooth-scroll class="pvxl phl" du-scrollspy offset="85">
+                      <i class="fa mrs" ng-class="link.icon"></i>
+                      {{link.name}}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="row visible-xs">
+              <div class="col-sm-24">
+                <div class="pal txt-r">
+                  <div class="dropdown" uib-dropdown is-open="status.isopen">
+                    <button id="dropdown-button-1" class="btn btn-highlight btn-highlight-alt" type="button" uib-dropdown-toggle>
+                      Filter Products
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu role="menu" aria-labelledby="dropdown-button-1">
+                      <li ng-repeat="link in subnavLinks.pcf track by $index">
+                        <a href="#{{ link.id }}" ng-click="status.isopen = false" du-smooth-scroll class="pvxl phl" du-scrollspy offset="85">
+                          <i class="fa mrs" ng-class="link.icon"></i>
+                          {{link.name}}
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+</section>
