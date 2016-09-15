@@ -38,6 +38,18 @@ angular.module('labsDesignYeoman')
 
     $scope.selectRelease = function(rel) {
       $scope.selectedRelease = rel;
+    };
+
+    $scope.productFiles = [];
+
+    for(var i = 0; i < 10; i++) {
+      var fakeFileObj = {
+        name: faker.system.fileName(),
+        version: faker.system.semver(),
+        size: chance.integer({min: 1, max: 900})
+      }
+
+      $scope.productFiles.push(fakeFileObj);
     }
 
   });
