@@ -11,10 +11,14 @@
           </div>
           <div class="breadcrumb-right">
             <ul class="list-inline lhxl mtm mbn">
-              <li><a class="h4 em-high type-neutral-11">Get Email Updates</a></li>
+              <li>
+                <a class="h4 em-high type-neutral-11">
+                <i class="fa fa-envelope mrm"></i>
+                Get Email Updates
+                </a>
+            </li>
               <li><a class="h4 em-high type-neutral-11">Documentation</a></li>
-              <li><a class="h4 em-high type-neutral-11">Compatability Matrix</a></li>
-              <li><a class="h4 em-high type-neutral-11">PDF Asset</a></li>
+              <li><a class="h4 em-high type-neutral-11">Compatibility</a></li>
               <li><a class="h4 em-high btn btn-highlight mts type-neutral-11">Download</a></li>
             </ul>
           </div>
@@ -73,49 +77,49 @@
             </ul> -->
           </div>
           <div class="col-sm-12">
-            <h2 class="h3 mbs em-high type-brand-9">Enterprise Criteria</h2>
+            <h2 class="h3 mbs em-high type-brand-9">Enterprise Readiness Criteria</h2>
             <div class="row">
               <div class="col-sm-12 col-md-10">
                 <ul class="lvl product-feature-list h4 pln">
                   <li class="type-neutral-11 checked">
                     <i class="fa fa-check type-brand-9 mrs"></i>
-                    Highly Available
+                    Lorem ipsum dolor amet
                   </li>
                   <li class="type-neutral-11 checked">
                     <i class="fa fa-check type-brand-9 mrs"></i>
-                    Availability Zone Support
+                    Lorem ipsum dolor amet
                   </li>
                   <li class="type-neutral-11 checked">
                     <i class="fa fa-check type-brand-9 mrs"></i>
-                    Automated Version Upgrades
+                    Lorem ipsum dolor amet
                   </li>
                   <li class="type-neutral-11 checked">
                     <i class="fa fa-check type-brand-9 mrs"></i>
-                    Rolling Deployments
+                    Lorem ipsum dolor amet
                   </li>
-                  <li class="type-dark-5">Customizable Plans</li>
-                  <li class="type-dark-5">Customizable Instances</li>
-                  <li class="type-dark-5">Plan Migrations</li>
+                  <li class="type-dark-5">Lorem ipsum dolor amet</li>
+                  <li class="type-dark-5">Lorem ipsum dolor amet</li>
+                  <li class="type-dark-5">Lorem ipsum dolor amet</li>
                 </ul>
               </div>
               <div class="col-sm-12 col-md-14">
                 <ul class="lvl product-feature-list h4 pln">
-                  <li class="type-dark-5">Dedicated &amp; Shared Instances</li>
+                  <li class="type-dark-5">Lorem ipsum dolor amet</li>
                   <li class="type-neutral-11 checked">
                     <i class="fa fa-check type-brand-9 mrs"></i>
-                    Operational Monitoring &amp; Logging
+                    Lorem ipsum dolor amet
                   </li>
                   <li class="type-neutral-11 checked">
                     <i class="fa fa-check type-brand-9 mrs"></i>
-                    Deployment Smoke Tests
+                    Lorem ipsum dolor amet
                   </li>
-                  <li class="type-dark-5">Long Lived Canaries</li>
+                  <li class="type-dark-5">Lorem ipsum dolor amet</li>
                   <li class="type-neutral-11 checked">
                     <i class="fa fa-check type-brand-9 mrs"></i>
-                    Encrypted Communication in transmit
+                    Lorem ipsum dolor amet
                   </li>
-                  <li class="type-dark-5">Quota / Metering</li>
-                  <li class="type-dark-5">Backup &amp; Restore</li>
+                  <li class="type-dark-5">Lorem ipsum dolor amet</li>
+                  <li class="type-dark-5">Lorem ipsum dolor amet</li>
                 </ul>
               </div>
             </div>
@@ -127,14 +131,24 @@
   <section class="product-detail-content pvxl">
     <div class="container container-xl">
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-14">
           <div class="panel panel-basic-alt mbxl">
-            <div class="panel-header">
-              <h2 class="h5 panel-title-alt">Release Download Files</h2>
+            <div class="panel-header panel-header-with-search panel-title-alt">
+              <h2 class="h5 panel-title">
+                Release Files
+              </h2>
+              <div class="form-group form-group-search mbn">
+                <input type="text" placeholder="Search for release files" ng-model="fileSearch" class="form-control">
+                <i class="fa fa-search"></i>
+              </div>
             </div>
             <div class="panel-body pan">
               <ul class="list-group file-list-group list-link-group mvn">
-                <li class="list-group-item pan" ng-repeat="file in productFiles">
+                <li class="list-group-item empty-state" ng-if="(productFiles|filter:fileSearch).length == 0">
+                  <img class="empty-state-image mbl" src="images/sad-file.svg" alt="">
+                  <h3>No files named <span class="em-high">{{ fileSearch }}</span> found </h3>
+                </li>
+                <li class="list-group-item pan" ng-repeat="file in productFiles | filter: fileSearch">
                   <div class="media">
                     <a class="media-body media-middle phxl pvl">
                       <div class="media">
@@ -158,6 +172,32 @@
                   </div>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-10">
+          <div class="panel panel-basic-alt mbxl">
+            <div class="panel-header">
+              <h2 class="h5 panel-title-alt">Release Details</h2>
+            </div>
+            <div class="panel-body paxl">
+              <table class="table table-key-value">
+                <tbody>
+                  <tr>
+                    <th class="col-sm-12 type-neutral-4">Release Date</th>
+                    <td class="col-sm-12">9/15/2016</td>
+                  </tr>
+                  <tr>
+                    <th class="col-sm-12 type-neutral-4">Release Type</th>
+                    <td class="col-sm-12">Minor Release</td>
+                  </tr>
+                </tbody>
+              </table>
+              <hr>
+              <h5 class="type-neutral-4 em-max text-uppercase">Release Details</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta provident at rem tempore, modi suscipit accusamus quisquam impedit placeat dolore veritatis nulla necessitatibus ea non, assumenda quos. Labore, pariatur, nesciunt.</p>
+              <hr>
+              <a href="#">End User License Agreement</a>
             </div>
           </div>
         </div>

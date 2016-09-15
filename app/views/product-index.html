@@ -34,7 +34,7 @@
         <div class="row">
           <div class="row">
             <div class="col-sm-18 col-sm-offset-3 txt-c">
-              <h2 class="mtn mbn">Leverage Pivotal Cloud Foundry Services</h2>
+              <h2 class="mtn mbn">Leverage Pivotal Cloud Foundry Services and Add-Ons</h2>
               <h3 class="mts mbs type-neutral-4">Developers get role-based self-service access to systems of record, big data analytics, mobile notifications, continuous integration and more.</h3>
               <hr class="hr-mint mbxxl">
             </div>
@@ -48,7 +48,7 @@
           <div class="col-sm-18">
             <div class="tile-layout-sm-2 tile-layout-md-2 tile-layout-lg-2 tile-gutter tile-layout">
               <div class="tile-item" ng-repeat="product in products.datastores">
-                <product-card name="{{ product.name }}" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." icon="{{product.icon}}" badge="{{product.badge}}" provider="{{ product.author }}">
+                <product-card ui-sref="detail({id: product.guid})" name="{{ product.name }}" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." icon="{{product.icon}}" badge="{{product.badge}}" provider="{{ product.author }}">
                 </product-card>
               </div>
             </div>
@@ -67,7 +67,7 @@
           <div class="col-sm-18">
             <div class="tile-layout-sm-2 tile-layout-md-2 tile-layout-lg-2 tile-gutter tile-layout">
               <div class="tile-item" ng-repeat="product in products.monitoring">
-                <product-card name="{{ product.name }}" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." icon="{{product.icon}}" badge="{{product.badge}}" provider="{{ product.author }}">
+                <product-card ui-sref="detail({id: product.guid})" name="{{ product.name }}" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." icon="{{product.icon}}" badge="{{product.badge}}" provider="{{ product.author }}">
                 </product-card>
               </div>
             </div>
@@ -86,7 +86,7 @@
           <div class="col-sm-18">
             <div class="tile-layout-sm-2 tile-layout-md-2 tile-layout-lg-2 tile-gutter tile-layout">
               <div class="tile-item" ng-repeat="product in products.mobile">
-                <product-card name="{{ product.name }}" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." icon="{{product.icon}}" badge="{{product.badge}}" provider="{{ product.author }}">
+                <product-card ui-sref="detail({id: product.guid})" name="{{ product.name }}" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." icon="{{product.icon}}" badge="{{product.badge}}" provider="{{ product.author }}">
                 </product-card>
               </div>
             </div>
@@ -105,7 +105,7 @@
           <div class="col-sm-18">
             <div class="tile-layout-sm-2 tile-layout-md-2 tile-layout-lg-2 tile-gutter tile-layout">
               <div class="tile-item" ng-repeat="product in products.messaging">
-                <product-card name="{{ product.name }}" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." icon="{{product.icon}}" badge="{{product.badge}}" provider="{{ product.author }}">
+                <product-card ui-sref="detail({id: product.guid})" name="{{ product.name }}" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." icon="{{product.icon}}" badge="{{product.badge}}" provider="{{ product.author }}">
                 </product-card>
               </div>
             </div>
@@ -124,7 +124,7 @@
           <div class="col-sm-18">
             <div class="tile-layout-sm-2 tile-layout-md-2 tile-layout-lg-2 tile-gutter tile-layout">
               <div class="tile-item" ng-repeat="product in products.developer">
-                <product-card name="{{ product.name }}" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." icon="{{product.icon}}" badge="{{product.badge}}" provider="{{ product.author }}">
+                <product-card ui-sref="detail({id: product.guid})" name="{{ product.name }}" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." icon="{{product.icon}}" badge="{{product.badge}}" provider="{{ product.author }}">
                 </product-card>
               </div>
             </div>
@@ -141,7 +141,7 @@
         <div class="col-sm-24">
           <div class="tile-layout-sm-2 tile-layout-md-2 tile-layout-lg-3 tile-gutter tile-layout">
             <div class="tile-item" ng-repeat="product in products.data">
-              <product-card name="{{ product.name }}" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." icon="{{product.icon}}" badge="{{product.badge}}" provider="{{ product.author }}">
+              <product-card ui-sref="detail({id: product.guid})" name="{{ product.name }}" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." icon="{{product.icon}}" badge="{{product.badge}}" provider="{{ product.author }}">
               </product-card>
             </div>
           </div>
@@ -157,7 +157,7 @@
         <div class="col-sm-24">
           <div class="tile-layout-sm-2 tile-layout-md-2 tile-layout-lg-3 tile-gutter tile-layout">
             <div class="tile-item" ng-repeat="product in products.applications">
-              <product-card name="{{ product.name }}" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." icon="{{product.icon}}" badge="{{product.badge}}" provider="{{ product.author }}">
+              <product-card ui-sref="detail({id: product.guid})" name="{{ product.name }}" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." icon="{{product.icon}}" badge="{{product.badge}}" provider="{{ product.author }}">
               </product-card>
             </div>
           </div>

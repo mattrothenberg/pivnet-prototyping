@@ -3,6 +3,7 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 // bower:scss
 @import "font-awesome/scss/font-awesome.scss";
 // endbower
+@import 'animate';
 @import 'variables';
 @import 'tile';
 
@@ -42,7 +43,7 @@ body {
   z-index: 10;
 }
 
-.form-control {
+.product-search {
   transition: all .2s ease-out;
 
   &:focus {
@@ -218,14 +219,6 @@ body {
   transition: all ease-in-out 220ms;
 }
 
-.empty-state {
-  img {
-    opacity: .5;
-    margin: 0 auto;
-    max-width: 200px;
-  }
-}
-
 .loader {
   align-items: center;
   display: flex;
@@ -393,7 +386,26 @@ $spin-duration: 500ms;
   }
 }
 
+.empty-state-image {
+  display: block;
+  opacity: .35;
+  width: 100px;
+}
+
+li.empty-state {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &:hover {
+    background: #fff !important;
+  }
+}
+
 .file-list-group {
+
   .btn-download {
     position: absolute;
     left: 10px;
@@ -410,6 +422,39 @@ $spin-duration: 500ms;
     .btn-download {
       opacity: 1;
       visibility: visible;
+    }
+  }
+}
+
+.panel-header-with-search {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+
+  .panel-title {
+    flex: 1;
+  }
+
+  .form-group {
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+
+    .form-control {
+      transition: all .2s ease-out;
+    }
+
+    .form-control:focus {
+      border-color: $brand-6;
+
+      & ~ i {
+        color: $brand-6;
+      }
+    }
+
+    i {
+      color: $neutral-7;
+      transition: color .2s ease-out;
     }
   }
 }
