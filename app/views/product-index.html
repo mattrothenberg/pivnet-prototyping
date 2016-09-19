@@ -1,3 +1,27 @@
+<section class="full-screen-search fade" ng-if="fullScreenSearchShowing" escape-close>
+  <div class="full-screen-search-overlay txt-l"></div>
+  <div class="full-screen-search-inner">
+    <h2 class="type-neutral-11">Can't find what you're looking for?</h2>
+    <div class="full-screen-search-input">
+      <div angucomplete-alt
+        id="productSearch"
+        placeholder="Search for products"
+        pause="1500"
+        selected-object="$parent.productSearch"
+        local-data="$parent.filteredProducts"
+        search-fields="name,group"
+        image-field="icon"
+        title-field="name"
+        description-field="group"
+        minlength="1"
+        autofocus="searchIsFocused"
+        input-class="form-control product-search input-lg search-input"
+        template-url="views/product-search-dropdown.html"
+        match-class="highlight">
+      </div>
+    </div>
+  </div>
+</section>
 <ng-include src="'views/hero.html'"></ng-include>
 <section class="product-tile-section fade" ng-show="activeTypeFilter === 'pcf'">
   <div class="pcf-core-products paxxl">
@@ -32,12 +56,10 @@
     <article id="datastores">
       <div class="container">
         <div class="row">
-          <div class="row">
-            <div class="col-sm-18 col-sm-offset-3 txt-c">
-              <h2 class="mtn mbn">Leverage Pivotal Cloud Foundry Services and Add-Ons</h2>
-              <h3 class="mts mbs type-neutral-4">Developers get role-based self-service access to systems of record, big data analytics, mobile notifications, continuous integration and more.</h3>
-              <hr class="hr-mint mbxxl">
-            </div>
+          <div class="col-sm-18 col-sm-offset-3 txt-c">
+            <h2 class="mtn mbn">Leverage Pivotal Cloud Foundry Services and Add-Ons</h2>
+            <h3 class="mts mbs type-neutral-4">Developers get role-based self-service access to systems of record, big data analytics, mobile notifications, continuous integration and more.</h3>
+            <hr class="hr-mint mbxxl">
           </div>
         </div>
         <div class="row">

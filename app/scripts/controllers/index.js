@@ -10,6 +10,7 @@
 angular.module('labsDesignYeoman')
   .controller('IndexCtrl', function ($scope, $timeout, ProductService, $state) {
     $scope.activeTypeFilter = 'pcf';
+    $scope.fullScreenSearchShowing = false;
     $scope.productSearch;
     $scope.products = ProductService.getProducts();
     $scope.filteredProducts = [];
@@ -57,6 +58,10 @@ angular.module('labsDesignYeoman')
       });
 
       $scope.searchIsFocused = true;
+    };
+
+    $scope.showSearchModal = function() {
+      $scope.fullScreenSearchShowing = true;
     };
 
     $scope.showProducts = function(type) {
