@@ -45,7 +45,7 @@ angular.module('labsDesignYeoman')
 
         var tags = _.find($scope.subnavLinks.pcf, {id: productGroupTitle});
 
-        if (!! _.size(tags)) {
+        if (! _.isEmpty(tags)) {
           product.tags = tags.tags;
         }
         $scope.filteredProducts.push(product);
@@ -67,4 +67,8 @@ angular.module('labsDesignYeoman')
     $scope.showProducts = function(type) {
       $scope.activeTypeFilter = type;
     };
+
+    $scope.closeSearchModal = function() {
+      $scope.fullScreenSearchShowing = false;
+    }
   });
